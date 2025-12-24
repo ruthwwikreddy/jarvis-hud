@@ -1,0 +1,85 @@
+.calendar {
+    position: relative;
+    background: rgba(0, 255, 255, 0.05);
+    border-right: 2px solid var(--cyan-primary);
+    padding: 20px;
+    backdrop-filter: blur(10px);
+    width: 300px;
+}
+
+.cal-header {
+    font-size: 10px;
+    color: var(--cyan-dark);
+    letter-spacing: 3px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    border-bottom: 1px solid rgba(0, 255, 255, 0.2);
+    padding-bottom: 5px;
+}
+
+.cal-body {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.cal-main {
+    display: flex;
+    flex-direction: column;
+}
+
+.cal-day-name {
+    font-size: 12px;
+    letter-spacing: 2px;
+    opacity: 0.8;
+}
+
+.cal-date {
+    font-size: 48px;
+    font-weight: 900;
+    line-height: 1;
+}
+
+.cal-month {
+    font-size: 14px;
+    letter-spacing: 4px;
+    font-weight: 700;
+}
+
+.cal-sidebar {
+    text-align: right;
+}
+
+.cal-year {
+    font-size: 18px;
+    font-weight: 800;
+    opacity: 0.6;
+}
+
+.cal-week-status {
+    font-size: 10px;
+    color: var(--cyan-dark);
+}
+
+.cal-footer {
+    margin-top: 20px;
+    background: rgba(0, 255, 255, 0.08);
+    padding: 10px 12px;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    border: 1px solid rgba(0, 255, 255, 0.1);
+}
+
+.event-tag {
+    font-size: 8px;
+    background: var(--cyan-primary);
+    color: black;
+    padding: 2px 5px;
+    font-weight: 900;
+}
+
+.event-desc {
+    font-size: 10px;
+    letter-spacing: 1px;
+}

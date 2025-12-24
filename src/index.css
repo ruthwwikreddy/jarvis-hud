@@ -1,0 +1,383 @@
+:root {
+  --cyan-primary: #00ffff;
+  --cyan-glow: rgba(0, 255, 255, 0.6);
+  --cyan-dark: #00cccc;
+  --bg-black: #000000;
+  --bg-dark: #0a0a0a;
+  --text-shadow: 0 0 10px var(--cyan-glow), 0 0 20px var(--cyan-glow);
+  --box-shadow-glow: 0 0 20px var(--cyan-glow), 0 0 40px var(--cyan-glow);
+
+  font-family: 'Orbitron', monospace;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  /* background: radial-gradient(ellipse at center, #0a0a0a 0%, #000000 100%); */
+  background: transparent;
+  color: var(--cyan-primary);
+  cursor: none;
+
+  /* This makes the whole background draggable so you can move it to another monitor */
+  -webkit-app-region: drag;
+}
+
+/* We must make interactive elements non-draggable so they still work */
+button,
+input,
+a,
+.settings-panel,
+.todo-list,
+.spotify-track {
+  -webkit-app-region: no-drag;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.app {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  -webkit-app-region: drag;
+}
+
+/* Custom Cursor */
+.custom-cursor {
+  position: fixed;
+  width: 40px;
+  height: 40px;
+  pointer-events: none;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cursor-ring {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 1px solid var(--cyan-primary);
+  border-radius: 50%;
+  opacity: 0.5;
+  animation: rotate 4s linear infinite;
+}
+
+.cursor-crosshair {
+  width: 10px;
+  height: 10px;
+  position: relative;
+}
+
+.cursor-crosshair::before,
+.cursor-crosshair::after {
+  content: '';
+  position: absolute;
+  background: var(--cyan-primary);
+  box-shadow: var(--text-shadow);
+}
+
+.cursor-crosshair::before {
+  width: 100%;
+  height: 2px;
+  top: 4px;
+}
+
+.cursor-crosshair::after {
+  height: 100%;
+  width: 2px;
+  left: 4px;
+}
+
+
+/* Scanline Effect */
+.scanlines {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+  background: repeating-linear-gradient(0deg,
+      rgba(0, 255, 255, 0.03) 0px,
+      rgba(0, 255, 255, 0.03) 1px,
+      transparent 1px,
+      transparent 2px);
+  animation: scanline 8s linear infinite;
+}
+
+@keyframes scanline {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+/* Vignette Effect */
+.vignette {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9998;
+  box-shadow: inset 0 0 200px rgba(0, 0, 0, 0.8), inset 0 0 100px rgba(0, 0, 0, 0.6);
+}
+
+/* Glowing Text */
+.glow-text {
+  color: var(--cyan-primary);
+  text-shadow: var(--text-shadow);
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+/* Pulsing Animation */
+@keyframes pulse {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.pulse {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* Floating Animation */
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Grid Background */
+.grid-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image:
+    linear-gradient(rgba(0, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 50px 50px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Draggable Elements */
+.draggable {
+  cursor: grab;
+  user-select: none;
+  transition: transform 0.2s ease;
+}
+
+.draggable:active {
+  cursor: grabbing;
+}
+
+.draggable:hover {
+  transform: scale(1.05);
+  filter: drop-shadow(0 0 20px var(--cyan-glow));
+}
+
+/* Glass Morphism */
+.glass {
+  background: rgba(0, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 255, 255, 0.2);
+  border-radius: 10px;
+  box-shadow: 0 8px 32px 0 rgba(0, 255, 255, 0.1);
+}
+
+/* Neon Border */
+.neon-border {
+  border: 2px solid var(--cyan-primary);
+  box-shadow:
+    0 0 5px var(--cyan-primary),
+    0 0 10px var(--cyan-primary),
+    inset 0 0 5px var(--cyan-primary),
+    inset 0 0 10px var(--cyan-primary);
+  animation: neon-flicker 1.5s infinite alternate;
+}
+
+@keyframes neon-flicker {
+
+  0%,
+  19%,
+  21%,
+  23%,
+  25%,
+  54%,
+  56%,
+  100% {
+    box-shadow:
+      0 0 5px var(--cyan-primary),
+      0 0 10px var(--cyan-primary),
+      inset 0 0 5px var(--cyan-primary),
+      inset 0 0 10px var(--cyan-primary);
+  }
+
+  20%,
+  24%,
+  55% {
+    box-shadow: none;
+  }
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--cyan-primary);
+  border-radius: 4px;
+  box-shadow: var(--text-shadow);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--cyan-dark);
+}
+
+/* Loading Animation */
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loading {
+  animation: rotate 2s linear infinite;
+}
+
+/* Fade In */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 1s ease-in;
+}
+
+/* Slide In */
+@keyframes slideInFromLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.slide-in-left {
+  animation: slideInFromLeft 0.8s ease-out;
+}
+
+.slide-in-right {
+  animation: slideInFromRight 0.8s ease-out;
+}
+
+/* Holographic Effect */
+.holographic {
+  position: relative;
+  background: linear-gradient(45deg,
+      rgba(0, 255, 255, 0.1),
+      rgba(0, 200, 255, 0.1),
+      rgba(0, 150, 255, 0.1),
+      rgba(0, 255, 255, 0.1));
+  background-size: 400% 400%;
+  animation: holographic-shift 3s ease infinite;
+}
+
+@keyframes holographic-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Particle Effect Container */
+.particles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}

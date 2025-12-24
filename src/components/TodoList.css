@@ -1,0 +1,64 @@
+.objectives-list {
+    position: relative;
+    background: rgba(0, 255, 255, 0.05);
+    border-left: 2px solid var(--cyan-primary);
+    padding: 20px;
+    backdrop-filter: blur(10px);
+    width: 300px;
+}
+
+.obj-header {
+    font-size: 10px;
+    color: var(--cyan-dark);
+    letter-spacing: 3px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    border-bottom: 1px solid rgba(0, 255, 255, 0.2);
+    padding-bottom: 5px;
+}
+
+.obj-items {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.obj-item {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.obj-indicator {
+    width: 4px;
+    height: 12px;
+    border-radius: 1px;
+}
+
+.obj-label {
+    color: var(--cyan-primary);
+    flex-grow: 1;
+}
+
+.obj-status {
+    font-weight: 800;
+    font-size: 9px;
+    text-shadow: 0 0 5px currentColor;
+    border: 1px solid currentColor;
+    padding: 2px 6px;
+    min-width: 60px;
+    text-align: center;
+}
+
+.obj-footer {
+    margin-top: 20px;
+    font-size: 10px;
+    color: var(--cyan-dark);
+    letter-spacing: 2px;
+    text-align: right;
+    border-top: 1px solid rgba(0, 255, 255, 0.1);
+    padding-top: 10px;
+}

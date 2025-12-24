@@ -1,0 +1,132 @@
+.settings-toggle {
+    position: fixed;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    background: rgba(0, 255, 255, 0.1);
+    border: 1px solid var(--cyan-primary);
+    border-right: none;
+    padding: 15px 5px;
+    cursor: pointer;
+    z-index: 10000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.settings-toggle:hover {
+    background: rgba(0, 255, 255, 0.2);
+    padding-right: 10px;
+}
+
+.toggle-icon {
+    font-size: 18px;
+    animation: rotate 4s linear infinite;
+}
+
+.toggle-label {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--cyan-primary);
+}
+
+.settings-panel {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 350px;
+    height: 100vh;
+    background: rgba(0, 10, 15, 0.95);
+    border-left: 2px solid var(--cyan-primary);
+    z-index: 10001;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+}
+
+.settings-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    border-bottom: 1px solid rgba(0, 255, 255, 0.3);
+    padding-bottom: 15px;
+}
+
+.settings-header h3 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 14px;
+    letter-spacing: 2px;
+    color: var(--cyan-primary);
+    margin: 0;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    color: var(--cyan-primary);
+    font-size: 24px;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.settings-content {
+    flex-grow: 1;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.settings-section {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.settings-section label {
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--cyan-dark);
+    letter-spacing: 1px;
+}
+
+.settings-section input {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(0, 255, 255, 0.2);
+    padding: 10px;
+    color: var(--cyan-primary);
+    font-family: 'Orbitron', sans-serif;
+    font-size: 12px;
+    outline: none;
+}
+
+.settings-section input:focus {
+    border-color: var(--cyan-primary);
+    background: rgba(0, 255, 255, 0.05);
+}
+
+.settings-footer {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(0, 255, 255, 0.1);
+}
+
+.settings-footer p {
+    font-size: 9px;
+    color: var(--cyan-dark);
+    margin: 4px 0;
+    letter-spacing: 0.5px;
+}
+
+.settings-footer code {
+    color: var(--cyan-primary);
+}
