@@ -1,0 +1,21 @@
+.identity-tag {
+    text-align: left;
+    pointer-events: none;
+    opacity: 0.8;
+    margin-bottom: 10px;
+}
+
+.id-main {
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--cyan-primary);
+    letter-spacing: 2px;
+}
+
+.id-sub {
+    font-size: 8px;
+    font-weight: 500;
+    color: var(--cyan-dark);
+    letter-spacing: 1px;
+    margin-top: 2px;
+}

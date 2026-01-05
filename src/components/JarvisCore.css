@@ -1,0 +1,62 @@
+.jarvis-core {
+    position: relative;
+    width: 500px;
+    height: 500px;
+    z-index: 100;
+    pointer-events: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.canvas-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.jarvis-core canvas {
+    width: 100% !important;
+    height: 100% !important;
+    filter: drop-shadow(0 0 40px var(--cyan-glow));
+}
+
+.jarvis-ui {
+    position: absolute;
+    bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.jarvis-label {
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: 6px;
+    white-space: nowrap;
+    text-shadow: 0 0 15px var(--cyan-glow);
+    color: #00d4ff;
+}
+
+.jarvis-core-status {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+}
+
+.status-label {
+    font-size: 9px;
+    color: var(--cyan-dark);
+    letter-spacing: 2px;
+    opacity: 0.6;
+}
+
+.status-value {
+    font-size: 11px;
+    font-weight: 800;
+    color: #00ff88;
+    letter-spacing: 2px;
+}

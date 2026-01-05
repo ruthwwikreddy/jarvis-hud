@@ -1,0 +1,247 @@
+.app {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    background: #000;
+}
+
+/* HUD Base Styles */
+
+/* Master Layout - Balanced Lateral Pillars */
+.hud-layout-grid {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-areas:
+        "top-center"
+        "main-content"
+        "bottom-bar";
+    grid-template-rows: 100px 1fr 80px;
+    padding: 0;
+    pointer-events: none;
+    z-index: 20;
+    box-sizing: border-box;
+}
+
+/* Side Pillars Container */
+.lateral-columns {
+    grid-area: main-content;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    /* Force pillars to the top */
+    padding: 20px 40px;
+    height: 100%;
+}
+
+.left-pillar,
+.right-pillar {
+    width: 380px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    pointer-events: auto;
+    justify-content: flex-start;
+    /* Ensure top alignment */
+}
+
+.left-pillar {
+    align-items: flex-start;
+}
+
+.right-pillar {
+    align-items: flex-end;
+}
+
+/* Header Area */
+.top-center {
+    grid-area: top-center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 10px;
+    /* Offset for browser fullscreen notice */
+    pointer-events: auto;
+}
+
+/* Center Core */
+.center-core {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: auto;
+    z-index: 10;
+}
+
+/* Bottom Bar */
+.bottom-bar {
+    grid-area: bottom-bar;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 20px;
+    pointer-events: auto;
+    gap: 10px;
+}
+
+/* Grouping Brackets */
+.hud-group {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    position: relative;
+    padding-left: 20px;
+    border-left: 1px solid rgba(0, 212, 255, 0.05);
+}
+
+.right-pillar .hud-group {
+    padding-left: 0;
+    padding-right: 20px;
+    border-left: none;
+    border-right: 1px solid rgba(0, 212, 255, 0.05);
+    align-items: flex-end;
+}
+
+.hud-group::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -1px;
+    width: 4px;
+    height: 30px;
+    background: var(--cyan-primary);
+    box-shadow: 0 0 15px var(--cyan-primary), 0 0 30px rgba(0, 212, 255, 0.3);
+}
+
+.right-pillar .hud-group::before {
+    left: auto;
+    right: -1px;
+}
+
+/* Specific group spacing */
+.left-pillar .hud-group:not(:first-child),
+.right-pillar .hud-group:not(:first-child) {
+    margin-top: 20px;
+}
+
+.instructions {
+    font-size: 10px;
+    color: var(--cyan-dark);
+    letter-spacing: 2px;
+    text-align: right;
+    margin-top: 10px;
+    opacity: 0.5;
+}
+
+/* Bottom Dock Styling */
+.system-dock {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: rgba(0, 20, 30, 0.4);
+    border: 1px solid rgba(0, 212, 255, 0.2);
+    padding: 8px 15px;
+    border-radius: 4px;
+    backdrop-filter: blur(10px);
+    pointer-events: auto;
+}
+
+.dock-item {
+    background: none;
+    border: 1px solid transparent;
+    color: rgba(0, 212, 255, 0.4);
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dock-item:hover {
+    color: #00d4ff;
+    background: rgba(0, 212, 255, 0.1);
+}
+
+.dock-item.active {
+    color: #00d4ff;
+    border-color: rgba(0, 212, 255, 0.3);
+    background: rgba(0, 212, 255, 0.1);
+    box-shadow: 0 0 15px rgba(0, 212, 255, 0.2);
+}
+
+.dock-separator {
+    width: 1px;
+    height: 25px;
+    background: rgba(0, 212, 255, 0.2);
+    margin: 0 5px;
+}
+
+/* Floating App Panel */
+.floating-app {
+    margin-top: 10px;
+}
+
+.left-pillar .floating-app {
+    align-self: flex-start;
+}
+
+.right-pillar .floating-app {
+    align-self: flex-end;
+}
+
+.gesture-feedback {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 8rem;
+    font-weight: 900;
+    color: rgba(0, 255, 255, 0.05);
+    pointer-events: none;
+    z-index: 100;
+    letter-spacing: 20px;
+    text-transform: uppercase;
+}
+
+
+
+.instructions-container {
+    margin-top: 20px;
+}
+
+.instructions {
+    padding: 10px 15px;
+    background: rgba(0, 255, 255, 0.03);
+    backdrop-filter: blur(5px);
+    border-right: 2px solid var(--cyan-primary);
+    text-align: right;
+    font-family: 'Orbitron', sans-serif;
+    pointer-events: none;
+}
+
+.instructions p {
+    margin: 2px 0;
+    font-size: 9px;
+    color: var(--cyan-primary);
+    opacity: 0.5;
+    letter-spacing: 1px;
+}
+
+/* Remove draggable styles since moving is disabled */
+.draggable {
+    cursor: default !important;
+}
+
+.draggable:hover {
+    transform: none !important;
+    filter: none !important;
+}

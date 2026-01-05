@@ -1,0 +1,94 @@
+.authenticator {
+    padding: 0;
+    width: 280px;
+}
+
+.auth-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(0, 212, 255, 0.1);
+}
+
+.auth-header h3 {
+    font-size: 10px;
+    color: rgba(0, 212, 255, 0.5);
+    letter-spacing: 2px;
+    margin: 0;
+}
+
+.auth-timer {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.timer-ring {
+    transform: rotate(0deg);
+}
+
+.timer-text {
+    position: absolute;
+    font-size: 9px;
+    color: #00d4ff;
+    font-weight: 600;
+}
+
+.auth-accounts {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding-right: 5px;
+}
+
+.auth-account {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(0, 212, 255, 0.1);
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.2s ease;
+}
+
+.auth-account:hover {
+    background: rgba(0, 212, 255, 0.05);
+    border-color: rgba(0, 212, 255, 0.3);
+}
+
+.account-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.account-name {
+    font-size: 11px;
+    color: #00d4ff;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.account-issuer {
+    font-size: 8px;
+    color: rgba(0, 212, 255, 0.4);
+    text-transform: uppercase;
+}
+
+.account-code {
+    font-size: 16px;
+    font-weight: 700;
+    color: #00ff88;
+    letter-spacing: 1px;
+    cursor: pointer;
+    background: rgba(0, 255, 150, 0.05);
+    border: 1px solid rgba(0, 255, 150, 0.1);
+    padding: 5px 10px;
+}
+
+.auth-footer {
+    display: none;
+    /* Hide footer to save space */
+}

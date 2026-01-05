@@ -1,0 +1,54 @@
+.objectives-list {
+    position: relative;
+    padding: 0;
+    width: 100%;
+}
+
+.obj-header {
+    font-size: 9px;
+    color: var(--cyan-primary);
+    letter-spacing: 2px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid rgba(0, 255, 255, 0.05);
+}
+
+.obj-items {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.obj-item {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.obj-indicator {
+    width: 2px;
+    height: 10px;
+}
+
+.obj-label {
+    color: var(--cyan-primary);
+    flex-grow: 1;
+    opacity: 0.7;
+}
+
+.obj-status {
+    font-weight: 700;
+    font-size: 8px;
+    border: 1px solid currentColor;
+    padding: 2px 6px;
+    min-width: 70px;
+    text-align: center;
+}
+
+.obj-footer {
+    display: none;
+}

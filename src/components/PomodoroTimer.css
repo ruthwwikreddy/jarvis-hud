@@ -1,0 +1,80 @@
+.pomodoro-container {
+    padding: 0;
+    width: 100%;
+}
+
+.pomo-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.pomo-title {
+    font-size: 0.6rem;
+    letter-spacing: 2px;
+    color: rgba(0, 212, 255, 0.5);
+    text-transform: uppercase;
+}
+
+.pomo-status {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #ff3333;
+    box-shadow: 0 0 5px #ff3333;
+}
+
+.pomo-status.active {
+    background: #00ff00;
+    box-shadow: 0 0 5px #00ff00;
+    animation: p-pulse 1.5s infinite;
+}
+
+.pomo-display {
+    font-family: 'Orbitron', monospace;
+    font-size: 1.8rem;
+    text-align: center;
+    color: #00d4ff;
+    margin: 5px 0;
+}
+
+.pomo-controls {
+    display: flex;
+    gap: 5px;
+}
+
+.pomo-btn {
+    flex: 1;
+    color: rgba(0, 212, 255, 0.6);
+    padding: 4px;
+    font-size: 0.6rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-transform: uppercase;
+}
+
+.pomo-btn:hover {
+    background: rgba(0, 212, 255, 0.1);
+    border-color: rgba(0, 212, 255, 0.4);
+    color: #fff;
+}
+
+.pomo-btn.main {
+    background: rgba(0, 212, 255, 0.1);
+    color: #00d4ff;
+}
+
+@keyframes p-pulse {
+    0% {
+        opacity: 0.4;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0.4;
+    }
+}

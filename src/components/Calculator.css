@@ -1,0 +1,78 @@
+.calculator-container {
+    padding: 0;
+    width: 100%;
+}
+
+.calc-header {
+    font-size: 0.6rem;
+    letter-spacing: 2px;
+    color: rgba(0, 212, 255, 0.5);
+    margin-bottom: 8px;
+    text-transform: uppercase;
+}
+
+.calc-screen {
+    background: rgba(0, 215, 255, 0.03);
+    border: 1px solid rgba(0, 212, 255, 0.1);
+    padding: 8px;
+    text-align: right;
+    margin-bottom: 15px;
+    min-height: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.calc-equation {
+    font-size: 0.6rem;
+    color: rgba(0, 212, 255, 0.4);
+    height: 12px;
+}
+
+.calc-display {
+    font-size: 1.2rem;
+    color: #00d4ff;
+    font-family: 'Orbitron', monospace;
+}
+
+.calc-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 4px;
+}
+
+.calc-btn {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(0, 212, 255, 0.1);
+    color: rgba(0, 212, 255, 0.8);
+    padding: 8px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: 'Orbitron', monospace;
+}
+
+.calc-btn:hover {
+    background: rgba(0, 212, 255, 0.1);
+    border-color: rgba(0, 212, 255, 0.4);
+    color: #fff;
+}
+
+.calc-btn.op {
+    background: rgba(0, 212, 255, 0.1);
+    color: #00d4ff;
+}
+
+.calc-btn.clear {
+    color: #ff5555;
+}
+
+.calc-btn.equal {
+    grid-row: span 2;
+    background: rgba(0, 212, 255, 0.3);
+    color: #fff;
+}
+
+.calc-btn.zero {
+    grid-column: span 2;
+}
